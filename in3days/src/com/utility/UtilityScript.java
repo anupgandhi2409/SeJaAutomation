@@ -16,7 +16,7 @@ public class UtilityScript {
 	
 	public static void launchBrowser(String browserType) {
 		
-		if (browserType=="ChromeBrowser"){
+		if (browserType.equalsIgnoreCase("ChromeBrowser")){
 				System.setProperty("webdriver.chrome.driver","C://SeJaAutomation//in3days//lib//chromedriver.exe");
 				driver = new ChromeDriver();
 		}

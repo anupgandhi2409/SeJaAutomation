@@ -7,14 +7,17 @@ import com.utility.UtilityScript;
 public class Init {
 	
 	@Test
-	public void intialize() throws Exception{
+	public void intialize() {
 	
-		UtilityScript.loadConfigPropertiesFile();
-		UtilityScript.launchBrowser(UtilityScript.configProp.getProperty("browsertype"));
-		UtilityScript.loadURL(UtilityScript.configProp.getProperty("siteURL"));
-		UtilityScript.timeOutInSeconds(30);
-		UtilityScript.windowMaximize();
-		UtilityScript.closeBrowser();
-		
+		try {
+			UtilityScript.loadConfigPropertiesFile();
+			UtilityScript.launchBrowser(UtilityScript.configProp.getProperty("browsertype"));
+			UtilityScript.loadURL(UtilityScript.configProp.getProperty("siteURL"));
+			UtilityScript.timeOutInSeconds(30);
+			UtilityScript.windowMaximize();
+			UtilityScript.closeBrowser();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
